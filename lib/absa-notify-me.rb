@@ -1,5 +1,6 @@
 require "absa-notify-me/version"
 require 'nori'
+require 'nokogiri'
 
 module Absa
   module NotifyMe
