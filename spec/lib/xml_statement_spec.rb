@@ -3,8 +3,9 @@ require 'spec_helper'
 describe Absa::NotifyMe::XmlStatement do
   
   before(:each) do
-    @input_string = File.open("./spec/examples/test.xml", "rb").read
-    @hash = Absa::NotifyMe::XmlStatement.string_to_hash(@input_string)
+    # @input_string = File.open("./spec/examples/test.xml", "rb").read
+    # @hash = Absa::NotifyMe::XmlStatement.string_to_hash(@input_string)
+    @hash = Absa::NotifyMe::XmlStatement.file_to_hash("./spec/examples/test.xml")
   end
   
   it "should be able to read the recon transmission header record" do

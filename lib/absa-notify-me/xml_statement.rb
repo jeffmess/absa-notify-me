@@ -3,6 +3,11 @@ module Absa
     
     class XmlStatement
       
+      def self.file_to_hash(file)
+        input_string = File.open(file, "rb").read
+        self.string_to_hash(input_string)
+      end
+      
       def self.string_to_hash(string)
         hash = {type: 'document', data: {type: 'notifyme_account', data: []}}
         
