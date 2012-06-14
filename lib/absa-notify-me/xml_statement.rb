@@ -11,6 +11,7 @@ module Absa
       def self.string_to_hash(string)
         hash = {type: 'document', data: {type: 'notifyme_account', data: []}}
         
+        Nori.parser = :nokogiri
         xml_doc = Nori.parse(string)
         
         xml_doc.each do |k,v|
