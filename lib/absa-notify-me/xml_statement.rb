@@ -56,7 +56,7 @@ module Absa
                 }
               }
             end
-            if key == :details
+            if (key == :details) && (!value.blank?)
               transactions = value[:transaction].blank? ? value["TRANSACTION"] : value[:transaction]
               transactions.each do |transaction|
                 amount = (transaction[:amt].to_f * 100).to_i.to_s
