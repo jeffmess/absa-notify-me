@@ -40,6 +40,7 @@ describe Absa::NotifyMe::XmlStatement do
 
     it "should contain a detail record" do
       @hash2[:data][:data].select {|record| record[:type] == "detail"}.count.should == 1
+      puts @hash2.inspect
     end
   end
 end

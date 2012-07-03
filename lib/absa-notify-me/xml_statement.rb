@@ -66,8 +66,8 @@ module Absa
                 hash[:data][:data] << {
                   type: "detail",
                   data: {
-                    account_number: transaction[:trg_acc],
-                    event_number: transaction[:event_no],
+                    account_number: transaction[:trg_acc].to_i.to_s,
+                    event_number: transaction[:event_no].to_i.to_s,
                     customer_reference: transaction[:clref],
                     currency: transaction[:curr],
                     amount: amount,
