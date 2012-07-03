@@ -31,10 +31,15 @@ describe Absa::NotifyMe::XmlStatement do
   context "Cater for an empty xml document" do
     before(:each) do
       @hash = Absa::NotifyMe::XmlStatement.file_to_hash("./spec/examples/empty_test.xml")
+      @hash2 = Absa::NotifyMe::XmlStatement.file_to_hash("./spec/examples/test_with_one_record.xml")
     end
     
     it "should not contain a detail record" do
       @hash[:data][:data].select {|record| record[:type] == "detail"}.should be_blank
+    end
+
+    it "should contain a detail record" do
+      @hash2[:data][:data].select {|record| record[:type] == "detail"}.count.should == 1
     end
   end
 end
